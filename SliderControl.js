@@ -54,11 +54,19 @@ L.Control.SliderControl = L.Control.extend({
   createSliderUI: function() {
     // Create a control sliderContainer with a jquery ui slider
     var sliderContainer = L.DomUtil.create('div', 'ui-slider-container', this._container);
-    
+
+    this._controlsContainer = $('<div class="sldr-ctrl-container"></div>')
+    $(sliderContainer).append(this._controlsContainer);
+    this._prevButton = $('<button class="prev_button"></button>').append('<span class="ui-icon ui-icon-seek-first"></span>');
+    $(this._controlsContainer).append(this._prevButton);
+    this._playButton = $('<button class="play_button"></button>').append('<span class="ui-icon ui-icon-play"></span>');
+    $(this._controlsContainer).append(this._playButton);
+    this._nextButton = $('<button class="next_button"></button>').append('<span class="ui-icon ui-icon-seek-end"></span>');
+    $(this._controlsContainer).append(this._nextButton);
+    this._sliderTimestamp = $('<div class="ui-slider-timestamp"></div>');
+    $(this._controlsContainer).append(this._sliderTimestamp);
     this._slider = $('<div class="ui-slider"><div class="ui-slider-handle"></div></div>');
     $(sliderContainer).append(this._slider);
-    this._sliderTimestamp = $('<div class="ui-slider-timestamp"></div>');
-    $(sliderContainer).append(this._sliderTimestamp);
     
     return sliderContainer;
   },
@@ -104,7 +112,7 @@ L.Control.SliderControl = L.Control.extend({
   },
   
   updateTimestamp: function(timestamps) {
-    $(this._sliderTimestamp).html(timestamps[0] + ' - ' + timestamps[1]);
+    $(this._sliderTimestamp).html(timestamps[0].substring(0,10));
   },
   
   buildTimestamp: function(start, end) {

@@ -37,8 +37,8 @@
     // Hurricane start parameters
     var Map = L.map('map').setView([29.96, -90.05], 5);
     var startTime = '2005-08-29T00:00:00';
-    var endTime = '2005-08-31T00:00:00';
-    var timeStep = 60 * 60;
+    var endTime = '2005-09-02T00:00:00';
+    var timeStep = 12 * 60 * 60;
     var range = false;
 
     
@@ -59,7 +59,7 @@
 
     // Initialize slider options
     sliderControl = L.control.sliderControl({
-        position: "topright",
+        position: "bottomright",
         layer: hurricane,
         startTime: startTime, 
         endTime: endTime,

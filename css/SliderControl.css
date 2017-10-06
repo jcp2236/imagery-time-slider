@@ -1,17 +1,30 @@
 .ui-slider-container {
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 10px;
-  width:90%;
+	background-color: #d3d3d3;
+	padding: 10px;
+	border-radius: 10px;
+	width:97%;
+	opacity:0.8;
 
 }
 
-.ui-slider-container .ui-slider-timestamp {
-  margin-top: 10px;
-  text-align: center;
-  font-weight: bold;
+.ui-slider-timestamp {
+	margin-left:15px;
+	text-align: left;
+	font-weight: bold;
+}
+
+.ui-slider {
+	margin-top: 25px;
+	width:87%;
+	float:right;
 }
 
 .leaflet-bottom.leaflet-right {
 	width: 100%;
+}
+
+.sldr-ctrl-container {
+	float:left;
+	width:12%;
+	margin-top: 20px;
 }
